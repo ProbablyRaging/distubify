@@ -1,1 +1,0 @@
-import{R as e,d as a}from"./index.9d48d1c3.js";const l=({children:t})=>e.createElement(e.Fragment,null,e.createElement("div",{className:`w-full h-[100vh] md:h-full box-border ${a.value?"bg-bgdark text-textdark":"bg-bglight text-textlight"} duration-150`},t));export{l as default};
