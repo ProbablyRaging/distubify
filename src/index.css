@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --btn-bg-primary: rgb(0, 4, 15);
+    --btn-bg-primary-hover: rgb(36, 36, 36);
+    --btn-bg-secondary-hover: #8658ba;
+}
+
+* {
+    scroll-behavior: smooth;
+}
+
+html {
+    background-color: #161616 !important;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: hsl(var(--nextui-background));
+    margin: 0;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #9b9b9b;
+    width: 12px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #848484;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+input {
+    border: none;
+}
+
+button {
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button.bg-primary:hover {
+    background: var(--btn-bg-primary-hover) !important;
+}
+
+button.bg-secondary:hover {
+    background: var(--btn-bg-secondary-hover) !important;
+}
