@@ -245,7 +245,7 @@ const NavBar = () => {
                         </div>
                     ) : (
                         <NavbarItem>
-                            <Link to="https://discord.com/api/oauth2/authorize?client_id=977292001718464592&redirect_uri=https://distubify.xyz/auth/redirect&response_type=code&scope=guilds%20identify">
+                            <Link to="https://discord.com/api/oauth2/authorize?client_id=977292001718464592&redirect_uri=https://creatordiscord.xyz/auth/redirect&response_type=code&scope=guilds%20identify">
                                 <Button color="primary" variant="solid">
                                     Sign In
                                 </Button>
