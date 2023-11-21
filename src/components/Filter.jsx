@@ -29,7 +29,7 @@ const Filter = () => {
     };
 
     return (
-        <div className={`fixed flex items-center flex-row gap-4 top-[64px] ss:ml-[95px] ${menuState.value ? 'ml-[250px]' : 'ml-[95px]'} pb-3 pt-3 ${darkMode.value ? 'bg-bgdark text-textdark' : 'bg-bglight text-textlight'} w-full box-border duration-150`}>
+        <div className={`fixed flex items-center flex-row gap-4 z-50 top-[64px] ss:ml-[95px] ${menuState.value ? 'ml-[250px]' : 'ml-[95px]'} pb-3 pt-3 ${darkMode.value ? 'bg-bgdark text-textdark' : 'bg-bglight text-textlight'} w-full box-border duration-150`}>
             {filters.map((item, index) => (
                 <div
                     key={index}

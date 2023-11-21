@@ -50,10 +50,9 @@ const NavBar = () => {
     };
 
     const filterByPlatform = async (value) => {
-        if (value === 'all') return navigate('/');
         const newVideoData = await getFilteredResults(value);
         fetchVideoData.value = newVideoData;
-        appendParams(value);
+        if (value !== 'all') appendParams(value);
     };
 
     const filterByChannel = async (value) => {
@@ -63,7 +62,7 @@ const NavBar = () => {
     };
 
     return (
-        <div className={`fixed flex flex-col justify-between right-auto ss:w-[95px] ${menuState.value ? 'w-[250px]' : 'w-[95px]'} ${darkMode.value ? 'text-white/90' : 'text-black/90'} top-[74px] h-full left-0 overflow-auto text-sm font-medium duration-150`}>
+        <div className={`fixed flex flex-col justify-between right-auto ss:w-[95px] ${menuState.value ? 'w-[250px]' : 'w-[95px]'} ${darkMode.value ? 'text-white/90' : 'text-black/90'} top-[74px] h-fit left-0 overflow-auto text-sm font-medium duration-150`}>
             <div className='flex flex-col px-3 pr-6'>
                 {menuItems.map((item, index) => (
                     <div className={`m-0 py-2 px-[18px] rounded-lg ${location.pathname.replace('/', '') === item.id ? 'bg-gray-200' : ''} ${darkMode.value ? 'hover:bg-white/10' : 'hover:bg-gray-200'} cursor-pointer`} key={index}>
@@ -87,7 +86,7 @@ const NavBar = () => {
                         </h2>
 
                         {fetchChannelData.value ? (
-                            <React.Fragment>
+                            <div className='overflow-scroll max-h-[76vh]'>
                                 {fetchChannelData.value.map((item, index) => (
                                     <div
                                         className={`m-0 py-2 px-[18px] rounded-lg ${darkMode.value ? 'hover:bg-white/10' : 'hover:bg-gray-200'} cursor-pointer`}
@@ -102,7 +101,7 @@ const NavBar = () => {
                                         </div>
                                     </div>
                                 ))}
-                            </React.Fragment>
+                            </div>
                         ) : (
                             <div className='flex place-content-center w-full h-full'>
                                 <span>No channels found</span>
@@ -110,20 +109,6 @@ const NavBar = () => {
                         )}
                     </div>
                 )}
-
-            </div>
-
-            <div className='relative bottom-[74px] text-center p-3'>
-                <div className='flex justify-center flex-row flex-wrap gap-4'>
-                    <div>
-                        <a href='https://discord.com/invite/contentcreator' target='_blank' rel='external noopener noreferrer' className={`${darkMode.value ? 'text-white/60' : 'text-black/40'}`}>
-                            <SiDiscord className='w-[20px] h-[20px]' />
-                        </a>
-                    </div>
-                </div>
-                <p className={`font-normal text-center text-[10px] leading-[18px] ${darkMode.value ? 'text-white/40' : 'text-gray-500'} m-0 duration-150`}>
-                    {menuState.value ? '© 2023 Distubify' : '© Distubify'}
-                </p>
             </div>
         </div>
     );

@@ -15,8 +15,8 @@
 }
 
 html {
-    background-color: #161616 !important;
     font-family: 'Poppins', sans-serif;
+    transition-duration: 150ms !important;
 }
 
 body {

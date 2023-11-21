@@ -69,8 +69,10 @@ const NavBar = () => {
             const themeState = localStorage.getItem('theme');
             if (!themeState) {
                 localStorage.setItem('theme', false);
+                document.documentElement.style.setProperty('background-color', '#fff', 'important');
             } else {
                 darkMode.value = JSON.parse(themeState);
+                document.documentElement.style.setProperty('background-color', darkMode.value ? '#161616' : '#fff', 'important');
             }
         };
         fetchTheme();
@@ -79,6 +81,7 @@ const NavBar = () => {
     const toggleTheme = () => {
         darkMode.value = !darkMode.value
         localStorage.setItem('theme', darkMode.value);
+        document.documentElement.style.setProperty('background-color', darkMode.value ? '#161616' : '#fff', 'important');
     };
 
     const toggleMenuState = () => {
@@ -176,9 +179,9 @@ const NavBar = () => {
                         </Link>
                     </div>
                     <NavbarBrand className='ss:hidden'>
-                        <Link to={`/`}>
+                        <a href="/">
                             <p className="font-bold text-[20px] text-inherit leading-[0] select-none">Distubify</p>
-                        </Link>
+                        </a>
                     </NavbarBrand>
                 </NavbarContent>
 
